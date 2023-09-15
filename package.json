@@ -4,24 +4,31 @@
   "description": "Cucumber Framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules\\.bin\\cypress run"
   },
   "keywords": [
     "cypress"
   ],
   "env": {
     "URL": "https://reqres.in/"
-    },
+  },
   "author": "brajesh",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.1.0"
+    "cypress": "^13.1.0",
+    "cypress-mochawesome-reporter": "^3.6.0"
   },
   "dependencies": {
+    "cucumber-json-report-formatter": "^0.1.4",
     "cypress-cucumber-preprocessor": "^4.3.1"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
-    "step_Definitions": "cypress/e2e/newtours"
+    "step_Definitions": "cypress/e2e/newtours",
+    "json": {
+      "enabled": true,
+      "formatter": "./jsonFormatter/cucumber-json-formatter",
+      "output": "cypress/cucumberReports/results.json"
+    }
   }
 }
