@@ -14,7 +14,7 @@ stage('Build'){
         
         stage('Testing') {
             steps {
-                bat ".\node_modules\.bin\cypress.cmd install --force"
+                bat "npm i"
                 bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
             }
         }
