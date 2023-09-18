@@ -9,6 +9,10 @@ module.exports = defineConfig({
       require('cypress-mochawesome-reporter/plugin')(on);
       on('file:preprocessor', cucumber()) //For cypress cucumber preprocessor
     },
-    specPattern: "cypress/e2e/*.feature"
+    specPattern: "cypress/e2e/*.feature",
+    "video": true,
+    "videosFolder": "cypress/videos",
+    "screenshotsFolder": "cypress/screenshots",
+
   },
 });
